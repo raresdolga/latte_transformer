@@ -1,0 +1,28 @@
+lr: 6.e-4
+lr_decay_fn: "cosine"
+lr_end_value: 6.e-5
+train_steps: 600000
+warmup_pc: 0.003 # rought 2000
+batch_size: 2
+grad_accumulation_steps: 4
+weight_decay: 0.01
+dataset_name: "enwik8-char" # "openwebtext" #
+# dropout each layer
+dropout: 0.0
+prenorm: True
+batchnorm: False
+attention_type: "extend2_latte" # "stable_latte" # "latte" #  "standard_causal" #
+block_type: "transformer"
+hidden_dim: 516
+nlayers: 12
+nheads: 12
+L: 516
+unroll: 100
+max_seq_len: 2000 
+eval_steps: 2000
+project: "latte"
+entity: "baesian-learning"
+wandb_log: False #True
+# Padding is done dynamically, so no need to re-tok depening on max_len
+disable_cache: False
+

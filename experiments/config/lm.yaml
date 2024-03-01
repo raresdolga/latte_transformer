@@ -1,0 +1,28 @@
+lr: 1.e-3
+lr_decay_fn: "cosine"
+lr_end_value: 1.e-4
+warmup_pc: 0.03
+train_steps: 5000 # 160000 #5000
+batch_size: 64
+# grad_accumulation_steps: 3
+#epochs: 100
+weight_decay: 0.01
+dataset_name: "shakespeare"
+# dropout each layer
+dropout: 0.2
+hidden_dim: 384
+nlayers: 6
+nheads: 6
+L: 384
+unroll: 100
+max_seq_len: 256 # 4000 # 1000 #1024 
+eval_steps: 200
+project: "latte"
+entity: "baesian-learning"
+attention_type: "scan_standard_causal" # "extend2_latte" # "standard_causal" # "extend1_latte" # "bias_latte" #  "latte" # 
+prenorm: True
+batchnorm: False
+block_type: "transformer"
+wandb_log: False #True
+disable_cache: True
+

@@ -1,0 +1,13 @@
+black
+datasets
+flax
+jax[cuda12_pip]
+matplotlib
+mypy
+numpy
+orbax
+torch
+tqdm
+transformers
+types-tqdm
+wandb

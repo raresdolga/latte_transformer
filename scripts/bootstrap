@@ -1,0 +1,7 @@
+#!/bin/bash
+# MUST BE RUN FROM PROJECT ROOT DIR
+python -m venv venv
+source ./scripts/init
+pip install --upgrade pip
+pip install -e .
+#pip install --no-cache-dir -r requirements.txt

@@ -1,0 +1,30 @@
+lr: 6.e-4
+lr_decay_fn: "cosine"
+lr_end_value: 6.e-5
+train_steps: 600000
+warmup_pc: 0.003 # rought 2000
+batch_size: 12
+grad_accumulation_steps: 2
+#epochs: 100
+weight_decay: 0.01
+dataset_name: "openwebtext"
+# dropout each layer
+dropout: 0.0
+prenorm: True
+batchnorm: False
+hidden_dim: 516
+nlayers: 12
+nheads: 12
+L: 516
+attention_type: "stable_latte" # "latte" #
+block_type: "transformer"
+unroll: 100
+max_seq_len: 1024 
+eval_steps: 2000
+project: "latte"
+entity: "baesian-learning"
+wandb_log: False #True
+# OPEN WEB is big and takes long to tokenize, please do not re-tokenize
+# Padding is done dynamically, so no need to re-tok depening on max_len
+disable_cache: False
+

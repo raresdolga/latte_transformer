@@ -1,0 +1,30 @@
+lr: 1.e-3
+lr_decay_fn: "cosine" # "constant"
+#train_steps: 2000
+batch_size: 32 # 90
+epochs: 200
+dataset_name: "cifar10" #"pathfinder32" # "pathfinder128" # "imdb" #"aan"
+normalize_img: False #
+tokenize_img: True #
+conv_embed: False #True
+pool: "mean"
+# dropout each layer
+dropout: 0.1
+batchnorm: False
+prenorm: True
+attention_type: "bid_latte" #"stable_latte"
+block_type: "transformer"
+weight_decay: 0.05
+hidden_dim:  512
+nlayers: 6
+nheads: 4 #
+max_seq_len: 1024 # 4000 # 2000 #16384 # 
+L: 512
+unroll: 100
+num_classes: 10
+eval_steps: 0
+project: "latte_lra"
+entity: "baesian-learning"
+wandb_log: False
+disable_cache: True
+

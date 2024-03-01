@@ -1,0 +1,8 @@
+#!/bin/bash
+# MUST BE RUN FROM PROJECT ROOT DIR
+export ROOT_DIR=$PWD
+echo "ROOT_DIR: ${ROOT_DIR}"
+source ./venv/bin/activate
+echo "Activated virtual environment"
+export PYTHONPATH="$PYTHONPATH:${ROOT_DIR}"
+echo "PYTHONPATH set to ${PYTHONPATH}"

@@ -1,0 +1,26 @@
+lr: 5.e-4
+#train_steps: 10
+batch_size: 2 # 90
+epochs: 50
+dataset_name: "pathfinder128" # "pathfinder32" # "imdb" #"aan"
+pool: "mean"
+weight_decay: 0.05
+# dropout each layer
+dropout: 0
+batchnorm: False
+prenorm: True
+attention_type: "bid_latte" #"stable_latte"
+block_type: "transformer"
+hidden_dim: 256
+nlayers: 6
+nheads: 4 #
+max_seq_len: 16384 # 1024 # 4000 # 2000 # 
+L: 40
+unroll: 100
+num_classes: 2
+eval_steps: 0
+project: "latte_lra"
+entity: "baesian-learning"
+wandb_log: False
+disable_cache: False
+
