@@ -12,6 +12,11 @@ from experiments.utils import get_dp, parse_args
 from config import LMTaskConfig
 from eval_utils.metric_utils import pred_acc_lm, cross_entropy_loss_lm
 
+logging.basicConfig(
+    format="%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s",
+    datefmt="%Y-%m-%d:%H:%M:%S",
+    level=logging.INFO,
+)
 LOG = logging.getLogger(__name__)
 
 

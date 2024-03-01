@@ -194,8 +194,6 @@ class Retreival(nn.Module):
             block_type=self.config.block_type,
             attention_type=self.config.attention_type,
         )
-        if self.config.prenorm:
-            self._norm1 = nn.LayerNorm()
         self._dense_1 = nn.Dense(features=self.config.hidden_dim, name="mlp")
         self._head = nn.Dense(features=self.config.num_classes, name="logits")
 
@@ -231,12 +229,9 @@ class Retreival(nn.Module):
                 - 1
             )
         X = self.encoder(input_ids, train=train, attention_mask=attention_mask)
-        # if self.config.prenorm:
-        #    X = self._norm1(X)
-
         if self.config.pool == "mean":
             X = jnp.einsum("BSH,BS->BSH", X, attention_mask)
-            pooled_x = X.sum(axis=1) / attention_mask.sum(axis=-1)
+            pooled_x = X.sum(axis=1) / attention_mask.sum(axis=-1)[..., None]
         elif self.config.pool == "last":
             # last non-pad token
             pooled_x = X[jnp.arange(2 * batch_size), sequence_lengths, :]

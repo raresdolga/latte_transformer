@@ -11,6 +11,11 @@ from experiments.utils import get_lra_dp, parse_args
 from config import LRATaskConfig
 from eval_utils.metric_utils import acc_class, cross_entropy_loss
 
+logging.basicConfig(
+    format="%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s",
+    datefmt="%Y-%m-%d:%H:%M:%S",
+    level=logging.INFO,
+)
 LOG = logging.getLogger(__name__)
 
 
