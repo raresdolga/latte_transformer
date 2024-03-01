@@ -1,4 +1,7 @@
 # Latte
+Official Implementation of
+[Latent Attention for Linear Time Transformers
+](https://doi.org/10.48550/arXiv.2402.17512)
 
 ## Set-up
 
